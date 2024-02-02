@@ -1,0 +1,130 @@
+body{
+    background-color: #626060;
+    /* text-decoration: none; */
+}
+a {
+    text-decoration: none;
+}
+.top {
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;  
+    /* line-height: 50%; */
+    /* height: 20%; */
+    /* background-color: #fff; */
+}
+hr {
+    margin: auto;
+    width: 50%;
+}
+
+/* 签名 */
+.yxqn_qm {
+    font-size: 10px;
+}
+.top > p {
+    color: rgb(237, 240, 243);
+}
+
+.with-line:after {  
+    content: ''; /* 伪元素需要内容，但这里我们不需要任何可见的内容 */  
+    display: block; /* 将伪元素设置为块级元素 */  
+    border-top: 2px solid #000; /* 在伪元素顶部设置2像素的黑色横线 */  
+    margin: 10px 0 0; /* 设置上边距，将线推离文本 */  
+}
+.yxqn_tx {
+    padding-top: 50px;
+    display: flex;
+    font-size: 14px;
+    
+    justify-content: center; 
+}
+
+/* 头像大小自适应 */
+.yxqn_tx>img {
+    justify-content: center; 
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    max-width: 30%;
+}
+/* 针对手机屏幕的样式 */  
+@media (max-width: 767px) {  
+    .yxqn_tx img {  
+      max-width: 100px; /* 在小屏幕设备上设置更小的最大宽度 */  
+    }  
+  }  
+    
+  /* 针对桌面屏幕的样式 */  
+  @media (min-width: 768px) {  
+    .yxqn_tx img {  
+      max-width: 200px; /* 在大屏幕设备上设置更大的最大宽度 */  
+    }  
+  }
+
+
+
+.yxqn_alink {
+    /* display: flex; */
+    display: flex;  
+    justify-content: space-around;  
+    /* text-align: center; */
+    align-items: center;  
+    font-size: 14px;
+    /* padding: 0 20%; */
+    margin: 10px 50%;
+}
+.spanlink {
+    /* padding: 0 10px; */
+    /* width: 30px; */
+    font-size: 12px;
+}
+/* .yxqn_alink span {
+    display: flex;
+    text-align: center;
+} */
+.a_alink {
+    display: flex;
+    text-decoration: none;  
+    color:aqua;  
+    /* font-weight: bold;   */
+    padding: 0 10px;  
+    width: 38px;
+}
+.a_alink:hover{
+    color: #93e60c;
+}
+.separator {  
+    margin: 0 5px; /* 分隔符的间距也设置为5px */  
+    color: #ccc; /* 可以自定义分隔符的颜色 */  
+}  
+
+
+
+.yxqn_link{
+    font-size: 12px;
+    position: fixed;  
+    bottom: 0;  
+    width: 100%;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    /* background-color: #333;   */
+    color: #0cf4c5;  
+    /* padding: 20px;  */
+    
+}
+
+.show {
+    font-size: 10px;
+    color: azure;
+    position: fixed;
+    padding-bottom: 30px;
+    bottom: 0;
+    /* display: flex;  
+    justify-content: center;
+    align-items: center; */
+}
+.show a {
+    color: aliceblue;
+}

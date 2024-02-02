@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一夕千念</title>
+    <script src="../js/vue.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div id="app">
+        
+        <div class="yxqn_tx">
+            <img :src="img_src" alt="">
+        </div>
+        <div class="top">
+            <p>{{ yxqn_tx }}</p>
+            <!-- <div class="with-line">
+            
+            </div> -->
+            <p class="yxqn_qm">&ldquo;{{ yxqn_qianming }}&ldquo;</p>
+            <hr>
+            
+
+        </div>
+        <div class="yxqn_alink">
+            
+            <span v-for="(link, index) in linksWithSeparators" :key="index" class="spanlink">
+                <a  v-if="typeof link === 'object'" :href="link.link" target="_blank" class="a_alink">
+                    {{ link.name }}
+                </a>
+                <span v-else class="separator">|</span>
+            </span>
+            
+             
+                <!-- <td>333</td> -->
+            <!-- </tr> -->
+        </div>
+        <footer>
+            
+            <div class="yxqn_link">
+                <div class="show">
+                    <p>
+                        <img src="../img/icp.png" width="16px" height="16px">
+                        <a href="http://beian.miit.gov.cn/" rel="nofollow" class="icp nav-link" target="_blank" _mstmutation="1" _istranslated="1">皖ICP备2021002870号-2</a>
+                    </p>
+                </div>
+                <!-- <p>本站运行时间:</p> -->
+                <p>本站已运行:{{ daytime }}天</p>
+                <br><br>
+                
+            </div>
+        </footer>
+        
+    </div>
+    <script>
+        const app = new Vue ({
+            el:'#app',
+            data:{
+                yxqn_tx:"一夕千念主页",
+                yxqn_qianming:"Everything will be ok",
+                img_src:"../img/dmn1.jpg",
+                alink:[
+                    {id: 1, link:"http://hao.qqvxzf.cn/", name:"导航栏"},
+                    {id: 2, link:"http://blog.tsaqhm.cn/", name:"博客"},
+                    {id: 3, link:"https://gitee.com/yixiqiannian", name:"Gitee"},
+                    {id: 4, link:"https://blog.csdn.net/weixin_43305645?type=blog", name:"CSDN"}
+                ],
+                // 开站时间
+                launchTime: new Date("01/21/2024 00:00:00"),  
+
+            },
+
+            computed: {
+                // 计算属性，用于在链接之间插入分隔符  
+                linksWithSeparators() {  
+                let result = [];  
+                this.alink.forEach((link, index) => {  
+                    result.push(link);  
+                    if (index < this.alink.length - 1) {  
+                        result.push('|'); // 插入分隔符  
+                    }  
+                });  
+                return result;  
+            } ,
+
+                daytime() {  
+                    
+                 // 获取当前时间  
+                 const now = new Date();  
+                 console.log("11");
+                 // 计算时间差（以秒为单位）  
+                 const timeDiff = Math.floor((now - this.launchTime) / 1000); 
+                 console.log("112");
+                 const timeDiffDays = Math.floor(timeDiff / (60 * 60 * 24))+1;
+                 console.log("113");
+                 // 返回运行时间  
+                 return ` ${timeDiffDays} `;  
+                 
+                },  
+        } 
+        })
+    </script>
+</body>
+</html>
